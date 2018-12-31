@@ -1,67 +1,13 @@
 // Require objects.
 var express = require('express');
 var app     = express();
-// var aws     = require('aws-sdk');
-
-// Edit this with YOUR email address.
-// var email   = "hello@example.com";
-    
-// Load your AWS credentials and try to instantiate the object.
-// aws.config.loadFromPath(__dirname + '/config-sample.json');
-
-// Instantiate SES.
-// var ses = new aws.SES();
-
-// Verify email addresses.
-// app.get('/verify', function (req, res) {
-//     var params = {
-//         EmailAddress: email
-//     };
-    
-//     ses.verifyEmailAddress(params, function(err, data) {
-//         if(err) {
-//             res.send(err);
-//         } 
-//         else {
-//             res.send(data);
-//         } 
-//     });
-// });
-
-// // Listing the verified email addresses.
-// app.get('/list', function (req, res) {
-//     ses.listVerifiedEmailAddresses(function(err, data) {
-//         if(err) {
-//             res.send(err);
-//         } 
-//         else {
-//             res.send(data);
-//         } 
-//     });
-// });
-
-// // Deleting verified email addresses.
-// app.get('/delete', function (req, res) {
-//     var params = {
-//         EmailAddress: email
-//     };
-
-//     ses.deleteVerifiedEmailAddress(params, function(err, data) {
-//         if(err) {
-//             res.send(err);
-//         } 
-//         else {
-//             res.send(data);
-//         } 
-//     });
-// });
 
 // Sending RAW email including an attachment.
 app.get('/send', function (req, res) {
     var AWS = require('aws-sdk');
     // Set the region 
-    AWS.config.update({accessKeyId: 'AKIAIXJTML3EDMLMATQQ',
-    secretAccessKey: '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',region: 'us-east-1'});
+    AWS.config.update({accessKeyId: 'AccessKey',
+    secretAccessKey: 'SecretKey',region: 'us-east-1'});
     
     // Create sendEmail params 
     var params = {
